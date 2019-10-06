@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcService.Protos";
+
+service DataStreamer {
+	rpc GetData (DataRequest) returns (DataResponse);
+	rpc GetDataStream (DataRequest) returns (stream DataResponse);
+}
+
+message DataRequest {
+}
+
+message DataResponse {
+	string message = 1;
+}
